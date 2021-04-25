@@ -1,6 +1,8 @@
 name: study actions
 
-on: [push]
+on:
+  push:
+    branches: [ staging ]
 
 jobs:
   job1:
