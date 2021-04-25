@@ -5,8 +5,19 @@ on:
     branches: [ staging ]
 
 jobs:
+  job0:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: echo a string
+        run: echo "Hello World"
+
   job1:
     runs-on: ubuntu-latest
+    needs: [job0]
+    environment:
+      name: staging
+      url: www.test.com
     
     steps:
       - name: echo a string
