@@ -20,3 +20,12 @@ jobs:
         run: |
           echo ${{ secrets.MY_SECRET }}
           pwd
+
+  job3:
+    runs-on: ubuntu-latest
+    needs: [job1]
+    steps:
+      - name: echo the directory
+        run: |
+          echo "Hi" ${{ secrets.MY_SECRET }}
+          pwd
