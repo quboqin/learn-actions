@@ -17,7 +17,7 @@ jobs:
     needs: [job0]
     environment:
       name: staging
-      url: www.test.com
+      url: "www.test.com"
     
     steps:
       - name: echo a string
