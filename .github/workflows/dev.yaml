@@ -8,12 +8,13 @@ jobs:
     
     steps:
       - name: echo a string
-        run: echo "Hello"
+        run: echo "Hello" ${{ secrets.YOUR_SECRET }}
 
   job2:
     runs-on: ubuntu-latest
     needs: [job1]
     steps:
       - name: echo the directory
-        run: pwd
-        
+        run: |
+          echo ${{ secrets.MY_SECRET }}
+          pwd
