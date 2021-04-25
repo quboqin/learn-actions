@@ -1,0 +1,19 @@
+name: study actions
+
+on: [push]
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: echo a string
+        run: echo "Hello"
+
+  job2:
+    runs-on: ubuntu-latest
+    needs: [job1]
+    steps:
+      - name: echo the directory
+        run: pwd
+        
